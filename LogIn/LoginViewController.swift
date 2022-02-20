@@ -11,23 +11,26 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var userNameTitle: UITextField!
+    @IBOutlet weak var passwordTitle: UITextField!
     
-    @IBOutlet weak var PasswordTitle: UIStackView!
     var userName: String!
-    
+    var password: String!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        userName = "007"
+        password = "12345"
         
     
     }
 
     @IBAction func loginAction(_ sender: Any) {
-        let test = userNameTitle.text
-        if test != "1" {
+        let inputLogin = userNameTitle.text
+        let inputPassword = passwordTitle.text
+        if inputLogin != userName && inputPassword != password {
             showAlert(with: "bla", and: "blabla")
+            passwordTitle.text?.removeAll()
             
         }
     }
