@@ -81,7 +81,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cVn-Ag-RZb"/>
                     <connections>
-                        <outlet property="PasswordTitle" destination="uYX-hT-C1J" id="vkU-ny-jaP"/>
+                        <outlet property="passwordTitle" destination="byN-lb-8ZY" id="pyM-qP-yMc"/>
                         <outlet property="userNameTitle" destination="Cob-PV-QHX" id="2kZ-Hb-DlH"/>
                     </connections>
                 </viewController>

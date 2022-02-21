@@ -29,16 +29,17 @@ class ViewController: UIViewController {
         let inputLogin = userNameTitle.text
         let inputPassword = passwordTitle.text
         if inputLogin != userName && inputPassword != password {
-            showAlert(with: "bla", and: "blabla")
+            showAlert(with: "Incorrect login or password", and: "Please try again")
             passwordTitle.text?.removeAll()
-            
         }
     }
     
     @IBAction func forgotPassword() {
+        showAlert(with: "Your password", and: password)
     }
     
     @IBAction func forgotName() {
+        showAlert(with: "Your name", and: userName)
     }
     
     
