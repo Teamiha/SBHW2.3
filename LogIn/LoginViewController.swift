@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         guard let settingsVC = segue.destination as? WelcomeViewController else { return }
         settingsVC.userName = userName
     }
+    
 
     @IBAction func loginAction(_ sender: Any) {
         let inputLogin = userNameTitle.text
@@ -54,6 +55,7 @@ class ViewController: UIViewController {
     
     
 }
+
 extension ViewController {
     private func showAlert(with title: String, and massage: String) {
         let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
@@ -63,3 +65,25 @@ extension ViewController {
     }
 }
 
+
+// MARK: - UITextFieldDelegate
+extension ViewController: UITextFieldDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTitle {
+            passwordTitle.becomeFirstResponder()
+        } else {
+            loginAction("")
+        }
+        return true
+    }
+    
+    
+}
