@@ -24,6 +24,11 @@ class ViewController: UIViewController {
         
     
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let settingsVC = segue.destination as? WelcomeViewController else { return }
+        settingsVC.userName = userName
+    }
 
     @IBAction func loginAction(_ sender: Any) {
         let inputLogin = userNameTitle.text
@@ -42,6 +47,10 @@ class ViewController: UIViewController {
         showAlert(with: "Your name", and: userName)
     }
     
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTitle.text = nil
+        passwordTitle.text = nil
+    }
     
     
 }
