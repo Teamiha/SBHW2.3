@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var userName: String!
     var password: String!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userName = "007"
@@ -30,7 +30,6 @@ class ViewController: UIViewController {
         settingsVC.userName = userName
     }
     
-
     @IBAction func loginAction(_ sender: Any) {
         let inputLogin = userNameTitle.text
         let inputPassword = passwordTitle.text
@@ -74,7 +73,6 @@ extension ViewController: UITextFieldDelegate {
         view.endEditing(true)
     }
     
-
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userNameTitle {
