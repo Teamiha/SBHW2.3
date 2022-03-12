@@ -24,10 +24,8 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func loginAction(_ sender: Any) {
-        let inputLogin = userNameTitle.text
-        let inputPassword = passwordTitle.text
-        if inputLogin != userName || inputPassword != password {
+    @IBAction func loginAction() {
+        if userNameTitle.text != userName || passwordTitle.text != password {
             showAlert(with: "Incorrect login or password", and: "Please try again")
             passwordTitle.text?.removeAll()
         } else {
@@ -74,7 +72,7 @@ extension ViewController: UITextFieldDelegate {
         if textField == userNameTitle {
             passwordTitle.becomeFirstResponder()
         } else {
-            loginAction("")
+            loginAction()
         }
         return true
     }
