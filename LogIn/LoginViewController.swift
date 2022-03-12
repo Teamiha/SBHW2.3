@@ -13,22 +13,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var userNameTitle: UITextField!
     @IBOutlet weak var passwordTitle: UITextField!
     
-    var userName: String!
-    var password: String!
     
+    private let userName = "007"
+    private let password = "12345"
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        userName = "007"
-        password = "12345"
-        
-    
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let settingsVC = segue.destination as? WelcomeViewController else { return }
         settingsVC.userName = userName
     }
+    
     
     @IBAction func loginAction(_ sender: Any) {
         let inputLogin = userNameTitle.text
@@ -36,6 +30,8 @@ class ViewController: UIViewController {
         if inputLogin != userName || inputPassword != password {
             showAlert(with: "Incorrect login or password", and: "Please try again")
             passwordTitle.text?.removeAll()
+        } else {
+            performSegue(withIdentifier: "welcomeView", sender: nil)
         }
     }
     
